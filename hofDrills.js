@@ -67,3 +67,24 @@ blizzard('Centinela Ave and Olympic Blvd');
 
 flood('Main St and Pacific Ave');
 flood('Centinela Ave and Olympic Blvd');
+
+function turtle(arr){
+    return  arr
+              .filter(arr => arr[0] >= 0 && arr[1] >= 0)
+              .map(arr => arr[0]+arr[1])
+              .forEach(steps => console.log(steps));
+  }
+ 
+  turtle([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+ 
+  function reduce(str){
+    return str
+              .split(' ')
+              .reduce((acc, cur) => {
+                if(cur.length === 3) return acc + ' ';
+                else return acc + cur[cur.length-1];
+                }, '')
+              .toUpperCase();
+  }
+ 
+  console.log(reduce('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
