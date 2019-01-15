@@ -23,11 +23,10 @@ function min(numbers){
 }
 
 function average(numbers) {
-    let sum = numbers[0];
-    let i = 0;
+    let sum = 0;
     numbers.forEach(function(number){
-        sum += numbers[i];
-        i++;
+        sum += number;
     })
     return sum / numbers.length;
 }
+
