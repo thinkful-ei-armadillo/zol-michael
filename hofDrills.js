@@ -1,19 +1,19 @@
-// function repeat(fn, n){
-//     for(let i = 0; i<n; i++){
-//         fn();
-//     }
-// }
+function repeat(fn, n){
+    for(let i = 0; i<n; i++){
+        fn();
+    }
+}
 
-// function hello(){
-//         console.log('Hello world');
-// }
+function hello(){
+        console.log('Hello world');
+}
 
-// function goodbye(){
-//     console.log('Goodbye world');
-// }
+function goodbye(){
+    console.log('Goodbye world');
+}
 
-// repeat(hello, 5);
-// repeat(goodbye, 5);
+repeat(hello, 5);
+repeat(goodbye, 5);
 
 
 // Filter drill
@@ -44,3 +44,26 @@ const filteredNames = filter(myNames, function(name) {
 
 console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+function hazardWarningCreator(typeOfWarning){
+    let warningCounter = 0;
+    return function (location){
+        warningCounter += 1;
+        let word = (warningCounter === 1) ? 'time' : 'times';
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${word} today!`);
+    }
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const blizzard = hazardWarningCreator('Blizzard');
+const flood = hazardWarningCreator('Flood');
+
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Centinela Ave and Olympic Blvd');
+
+blizzard('Main St and Pacific Ave');
+blizzard('Centinela Ave and Olympic Blvd');
+
+flood('Main St and Pacific Ave');
+flood('Centinela Ave and Olympic Blvd');
